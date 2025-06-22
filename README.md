@@ -20,14 +20,15 @@ A canvas drawing application built with React, TypeScript, and Vite.
 
 - **Undo Functionality**
 - **Clear Canvas**
-- **Save as Image**
+- **Download as Image**
 - **Error Boundary**
 - **History Management**
 
 ### ⌨️ Keyboard Shortcuts
 
 - `Ctrl+Z` / `Cmd+Z`: Undo last action
-- `Ctrl+S` / `Cmd+S`: Save canvas as image
+- `Ctrl+S` / `Cmd+S`: Save canvas
+- `Ctrl+Shift+D` / `Cmd+Shift+D`: Download canvas as image
 - `Ctrl+Delete` / `Cmd+Delete`: Clear entire canvas
 - `1-5`: Switch between tools (Brush, Line, Rectangle, Circle, Fill)
 - `E`: Toggle eraser mode

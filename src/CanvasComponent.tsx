@@ -6,7 +6,7 @@ import {
   initializeCanvas,
   createPreviewCanvas,
   updateDrawingProperties,
-  saveAsImage,
+  downloadAsImage,
 } from "./utils/canvasUtils";
 import { CURSOR_STYLES } from "./utils/constants";
 import type { CanvasProps } from "./types/canvas";
@@ -98,9 +98,12 @@ const CanvasComponent = ({
         }
       },
       canUndo: () => canUndo,
-      saveAsImage: (filename = "doodle-canvas", imageType = "png") => {
+      downloadAsImage: (
+        filename = "doodle-canvas",
+        imageType = "png"
+      ) => {
         if (canvasRef.current) {
-          saveAsImage(canvasRef.current, filename, imageType);
+          downloadAsImage(canvasRef.current, filename, imageType);
         }
       },
     }),

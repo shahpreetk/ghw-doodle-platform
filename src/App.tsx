@@ -49,16 +49,16 @@ function App() {
     }
   }, []);
 
-  const handleSaveCanvas = useCallback(() => {
+  const handleDownloadCanvas = useCallback(() => {
     if (canvasRef.current) {
       const timestamp = new Date()
         .toISOString()
         .slice(0, 19)
         .replace(/:/g, "-");
       const filename = `doodle-canvas-${timestamp}`;
-      canvasRef.current.saveAsImage(filename);
+      canvasRef.current.downloadAsImage(filename);
 
-      console.log(`Canvas saved as ${filename}`);
+      console.log(`Canvas downloaded as ${filename}`);
     }
   }, []);
 
@@ -84,10 +84,10 @@ function App() {
         handleUndo();
       }
 
-      // Ctrl/Cmd + S for Save
-      if ((event.ctrlKey || event.metaKey) && event.key === "s") {
+      // Ctrl/Cmd + Shift + D for Download
+      if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === "d") {
         event.preventDefault();
-        handleSaveCanvas();
+        handleDownloadCanvas();
       }
 
       // Delete key for Clear Canvas
@@ -150,7 +150,7 @@ function App() {
     handleClearCanvas,
     handleToolChange,
     handleEraserToggle,
-    handleSaveCanvas,
+    handleDownloadCanvas,
   ]);
 
   // Called by canvas when drawing occurs
@@ -175,7 +175,7 @@ function App() {
         canUndo={canUndoState}
         currentTool={currentTool}
         onToolChange={handleToolChange}
-        onSaveCanvas={handleSaveCanvas}
+        onDownloadCanvas={handleDownloadCanvas}
       />
       <ErrorBoundary>
         <CanvasComponent

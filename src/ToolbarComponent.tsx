@@ -15,7 +15,7 @@ interface ToolbarProps {
   canUndo: boolean;
   currentTool: ToolTypes;
   onToolChange: (tool: ToolTypes) => void;
-  onSaveCanvas: () => void;
+  onDownloadCanvas: () => void;
 }
 
 const PREDEFINED_COLORS = APP_CONFIG.COLORS.PREDEFINED;
@@ -34,7 +34,7 @@ const ToolbarComponent: React.FC<ToolbarProps> = ({
   canUndo,
   currentTool,
   onToolChange,
-  onSaveCanvas,
+  onDownloadCanvas,
 }) => {
   return (
     <div className={styles.toolbar} data-testid="toolbar">
@@ -212,12 +212,12 @@ const ToolbarComponent: React.FC<ToolbarProps> = ({
         </button>
 
         <button
-          className={styles.saveButton}
-          onClick={onSaveCanvas}
-          aria-label="Save Canvas"
-          title="Save canvas as image (Ctrl+S)"
+          className={styles.downloadButton}
+          onClick={onDownloadCanvas}
+          aria-label="Download Canvas"
+          title="Download canvas as image (Ctrl+D)"
         >
-          💾 Save
+          💾 Download
         </button>
 
         <button
@@ -235,6 +235,7 @@ const ToolbarComponent: React.FC<ToolbarProps> = ({
         <span className={styles.helpLabel}>Shortcuts:</span>
         <span>Ctrl+Z: Undo</span>
         <span>Ctrl+S: Save</span>
+        <span>Ctrl+Shift+D: Download</span>
         <span>1-5: Tools</span>
         <span>E: Eraser</span>
       </div>

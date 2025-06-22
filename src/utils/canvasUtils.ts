@@ -60,7 +60,7 @@ export const updateDrawingProperties = (
   ctx.lineWidth = brushSize;
 };
 
-export const saveAsImage = (
+export const downloadAsImage = (
   canvas: HTMLCanvasElement,
   filename = "doodle-canvas",
   imageType = "png"

@@ -19,7 +19,7 @@ export type CanvasRef = {
   clearCanvas: () => void;
   undo: () => void;
   canUndo: () => boolean;
-  saveAsImage: (filename?: string) => void;
+  downloadAsImage: (filename?: string) => void;
 };
 
 export type CanvasProps = {

@@ -28,6 +28,7 @@ export const APP_CONFIG = {
   KEYBOARD_SHORTCUTS: {
     UNDO: ["Ctrl+Z", "Cmd+Z"],
     SAVE: ["Ctrl+S", "Cmd+S"],
+    DOWNLOAD: ["Ctrl+Shift+D", "Cmd+Shift+D"],
     CLEAR: ["Ctrl+Delete", "Cmd+Delete"],
     TOOLS: {
       BRUSH: "1",
